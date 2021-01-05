@@ -1,10 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 const fallback = require('express-history-api-fallback');
 
 const config = require('./src/config.js');
 const logger = require('./src/logger.js');
 
 const app = express();
+app.use(cors());
 app.enable('trust proxy');
 app.use(logger.log4js.connectLogger(logger.getLogger('express'), {level: 'auto'}));
 const root = __dirname + config.app.front_path;
