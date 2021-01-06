@@ -66,7 +66,7 @@ const Score = () => {
               variant="contained"
               onClick={() => doRequest(resetScore)}
             >
-              Resel all history
+              Reset all history
             </Button>
           </Box>
         </>

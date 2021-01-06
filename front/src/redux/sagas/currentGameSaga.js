@@ -11,6 +11,6 @@ function* dataHandler() {
   }
 }
 
-export default function* gameSaga() {
+export default function* currentGameSaga() {
   yield takeLatest(CURRENT_GAME_REQUEST, dataHandler);
 }

@@ -1,16 +1,15 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 
 const Status = ({ isEnd, winner, team, myTeam }) => {
-  console.log(winner, '123123123')
-  const whoWin = !winner ? 'Ничья' : `Победила команда ${team}`;
+  const whoWin = !winner ? 'Draw' : `Team ${team} won`;
 
   return (
     <Box my={2} textAlign="center">
       <Typography color="secondary">
-        {`Вы играете за команду «${myTeam}»`}
+        {`You playing for the team «${myTeam}»`}
       </Typography>
       {isEnd && (
         <Typography variant="h6" color="primary">
