@@ -3,6 +3,7 @@ import { FixedSizeList } from 'react-window';
 import Box from '@material-ui/core/Box';
 import Alert from '@material-ui/lab/Alert';
 import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { getScore, resetScore } from '../../agents';
 import AppLayout from '../../_components/AppLayout';
@@ -49,6 +50,12 @@ const Score = () => {
     if (score?.list?.length) {
       return (
         <>
+          <Typography>
+              {`Player won ${score.player} times and AI won ${score.ai} times`}
+          </Typography>
+          <Typography>
+              {`Team X won ${score.X} times and team O won ${score.O} times`}
+          </Typography>
           <Box my={2} border={1}>
             <FixedSizeList
               width="100%"
